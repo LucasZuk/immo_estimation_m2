@@ -2,25 +2,221 @@
 
 	:root
 	{
+		/* Colors */
 		--green_flash : hsl(156, 100%, 50%);
 		--greyish_blue : hsl(202, 19%, 78%);
 		--super_blue : hsl(208, 87%, 54%);
+
+		--text_shadow : .1em .1em .1em hsla(0, 0%, 0%, .3);
+
+		/* Fonts */
+		--fantasy_font : 'Boogaloo', cursive;
+		--general_font : 'Source Sans Pro', sans-serif;
+
+		/* Size */
+		--big_size : 4em;
+		--large_size : 2em;
+		--great_size : 1.5em;
+		--general_size : 1em;
+		--small_size : .5em;
+		--mini_size : .1em;
+
+
 	}
 
-.label__flex
-{
-	display: flex;
-	flex-direction: column;
-}
+/* CSS global & MA0 */
+	*
+	{
+		color: white;
+		margin: 0;
+		padding: 0;
+
+		font-family: var(--general_font);
+		font-size:  var(--general_size);
+	}
+
+	.l-immo__body
+		{
+			height: 100vh;
+			width: 100vw;
+		}
+
+	.immo__body
+	{
+		background: linear-gradient(30deg, var(--green_flash), var(--super_blue));
+	}
 
 
-.l-immo__body
-{
-	height: 100vh;
-	width: 100vw;
-}
+/* Titre Principal */
+	
+	.l-immo__principal_title
+	{
+		width: 100vw;
+		text-overflow: wrap;
+		text-align: center;
 
-.immo__body
-{
-	background: linear-gradient(30deg, var(--green_flash), var(--super_blue));
-}
+		margin-top: var(--great_size);
+	}
+
+	.immo__principal_title
+	{
+		font-family: var(--fantasy_font);
+		font-size: var(--big_size);
+		text-shadow: var(--text_shadow);
+	}
+
+/* Section */
+	
+	.l-immo
+	{
+		display: flex;
+		justify-content: space-between;
+
+		margin-top: var(--great_size);
+		margin-left: 10vw;
+		margin-right: 10vw;
+
+		width: 80vw;
+	}
+
+	/* Formulaire */
+
+		.l-immo__form
+		{
+			display: flex;
+			flex-direction: column;
+			width: 30vw;
+		}
+
+		/* General labels */
+			.l-label__flex
+			{
+				display: flex;
+
+				width: 100%;
+
+				margin-top: var(--small_size);
+			}
+
+			.label__flex
+			{
+				display: flex;
+				flex-direction: column;
+
+				font-size: var(--large_size);
+			}
+
+		/* Generals inputs */
+
+			.l-immo__input 
+			{
+				max-width: 300px;
+			}
+
+			.immo__input
+			{
+				font-size: var(--general_size);
+				color: var(--super_blue);
+
+				border-radius: 5px;
+				border: var(--greyish_blue) 2px solid;
+			}
+
+		/* Radio */
+
+
+			.immo__input__radio:after 
+			{
+				position: relative;
+		        top: -2px; left: -1px;
+
+		        display: inline-block;
+		        visibility: visible;
+
+		        width: var(--general_size);
+		        height: var(--general_size);
+		        
+		        background-color: white;
+		        border-radius: var(--general_size);
+		        border: 1px solid var(--greyish_blue);
+
+		        content: '';  
+		    }
+
+		    .immo__input__radio:checked:after 
+		    {
+		        position: relative;
+		        top: -2px; left: -1px;
+
+		        display: inline-block;
+		        visibility: visible;
+
+		        width: var(--general_size);
+		        height: var(--general_size);
+		        
+		        background-color: var(--super_blue);
+		        border-radius: var(--general_size);
+		        border: 1px solid white;
+
+		        content: '';  
+		    }
+
+		/* Plat ou pente bordel */
+
+			.l-radio
+			{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				padding-right: var(--general_size);
+			}
+
+			.l-radio__container
+			{
+				width: 100%;
+
+				margin-top: var(--small_size);
+
+				display: flex;
+				justify-content: flex-start;
+			}
+
+			.label__radio
+			{
+				font-size: var(--large_size);
+				margin-left: var(--small_size);
+				margin-right: var(--small_size);
+			}
+
+		/* Bouton de validation */
+			
+			.l-immo__button
+			{
+				background-color: white;
+				padding: 0.1em 0.3em;
+				
+				align-self: flex-end;
+			}
+
+			.immo__button
+			{
+				font-size: var(--general_size);
+				color: var(--super_blue);
+
+				border-radius: 5px;
+				border: var(--greyish_blue) 2px solid;
+			}
+
+	/* Résultats */
+
+	.l-immo__results
+		{
+			width: 30vw;
+
+			margin-right: auto;
+			margin-left: auto;
+
+			margin-top: var(--great_size);
+
+			border-left: solid 1px white;
+		}
