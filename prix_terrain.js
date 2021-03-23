@@ -14,7 +14,7 @@
 				}
 				ville.innerHTML = listeVille;
 			})
-		.catch(console.log('Une erreur est survenue..'));
+		.catch(error => console.log('Une erreur est survenue..'));
 	}
 
 
@@ -23,3 +23,16 @@
 var codePostalBox = document.getElementById("codePostal");
 var ville = document.getElementById("ville");
 
+
+/* Se connecte à l'API quand on entre le code postal */
+codePostalBox.addEventListener('input', function()
+{
+	if (codePostalBox.value.length != 5)
+	{
+		console.log(codePostalBox.value);
+	}
+	else
+	{
+		getCodePostal(codePostalBox.value);
+	}
+})

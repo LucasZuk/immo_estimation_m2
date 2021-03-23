@@ -9,7 +9,7 @@
 <body class="immo__body l-immo__body">
 	<h1 class="l-immo__principal_title immo__principal_title">Prix de l'immobilier par code postaux</h1>
 	<section class="l-immo">
-			<form class="l-immo__form">
+			<form class="l-immo__form" action="prix_terrain.php" method="post">
 			<!-- Code postal -->
 			<label class="l-label__flex label__flex">Entrez un code postal</label><input type="text" name="codePostal" class="l-immo__input immo__input" id="codePostal"/>
 
@@ -18,6 +18,9 @@
 
 			<!-- Surface -->
 			<label class="l-label__flex label__flex">Surface</label><input type="text" name="surface" class="l-immo__input immo__input" id="surface"/>
+
+			<!-- Surface -->
+			<label class="l-label__flex label__flex">Prix</label><input type="text" name="prix" class="l-immo__input immo__input" id="prix"/>
 
 			<!-- Plat ou Pente -->
 			<div class="l-radio__container">
@@ -41,10 +44,58 @@
 				</div>
 			</div>
 			
-			<button name="addToBDD" class="l-immo__button immo__button">Ajouter en base</button>
+			<button type="submit" name="addToBDD" class="l-immo__button immo__button">Ajouter en base</button>
 		</form>
 
-		<div class="l-immo__results"></div>
+		<div class="l-immo__results">
+			<?php 
+				// if (preg_match('#^[0-9]{5}$#', $_POST[codePostal]))
+				// {
+				// 	$codePostal = $_POST[codePostal];
+				// }
+
+				// if(preg_match('#^[0-9]{3,}$#', $_POST[surface]))
+				// {}
+
+				$codePostal ="01390";
+            	$ville = "Saint André de Corcy";
+            	$surface = "10000";
+            	$prix = "200000";
+            	$flat = 0;
+            	$viabilise = 1;
+			
+
+
+            $servname = 'localhost';
+            $dbname = 'immo';
+            $user = 'root';
+            $pass = 'root';
+            
+            try
+            {
+                $bdd = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
+                $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            }
+            
+            catch(PDOException $e)
+            {
+              echo "Erreur : " . $e->getMessage();
+            }
+
+            $req = $bdd -> prepare('INSERT INTO prix_immo(codePostal, ville, surface, prix, flat, viabilise) VALUES(:codePostal, :ville, :surface, :prix, :flat, :viabilise)');
+            $req -> execute( array(
+            	'codePostal' => $codePostal,
+            	'ville' => $ville,
+            	'surface' => $surface,
+            	'prix' => $prix,
+            	'flat' => $flat,
+            	'viabilise' => $viabilise
+            )) ;
+                
+                echo 'Entrée ajoutée dans la table';
+ 
+			?>
+		</div>
 	</section>
 
 
