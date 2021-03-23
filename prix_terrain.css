@@ -1,0 +1,26 @@
+/* Variables globales */
+
+	:root
+	{
+		--green_flash : hsl(156, 100%, 50%);
+		--greyish_blue : hsl(202, 19%, 78%);
+		--super_blue : hsl(208, 87%, 54%);
+	}
+
+.label__flex
+{
+	display: flex;
+	flex-direction: column;
+}
+
+
+.l-immo__body
+{
+	height: 100vh;
+	width: 100vw;
+}
+
+.immo__body
+{
+	background: linear-gradient(30deg, var(--green_flash), var(--super_blue));
+}
