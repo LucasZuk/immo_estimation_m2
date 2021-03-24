@@ -14,7 +14,7 @@
 		--general_font : 'Source Sans Pro', sans-serif;
 
 		/* Size */
-		--big_size : 4em;
+		--big_size : 3em;
 		--large_size : 2em;
 		--great_size : 1.5em;
 		--general_size : 1em;
@@ -37,8 +37,13 @@
 
 	.l-immo__body
 		{
+			max-height: 100vh;
+			max-width: 100vw;
+
 			height: 100vh;
 			width: 100vw;
+
+			overflow: hidden;
 		}
 
 	.immo__body
@@ -53,9 +58,10 @@
 	{
 		width: 100vw;
 		text-overflow: wrap;
-		text-align: center;
 
-		margin-top: var(--great_size);
+		margin-top: var(--general_size);
+
+		padding-left: var(--general_size);
 	}
 
 	.immo__principal_title
@@ -85,7 +91,15 @@
 		{
 			display: flex;
 			flex-direction: column;
-			width: 30vw;
+
+			width: 40%;
+
+			padding-left: 10vw;
+			padding-right: 10vw;
+
+			padding-top: 2em;
+			padding-bottom: 2em;
+			
 		}
 
 		/* General labels */
@@ -103,7 +117,7 @@
 				display: flex;
 				flex-direction: column;
 
-				font-size: var(--large_size);
+				font-size: var(--general_size);
 			}
 
 		/* Generals inputs */
@@ -124,76 +138,93 @@
 
 		/* Radio */
 
+			/* All container */
 
-			.immo__input__radio:after 
-			{
-				position: relative;
-		        top: -2px; left: -1px;
+				.l-radio__container
+					{
+						width: 100%;
 
-		        display: inline-block;
-		        visibility: visible;
+						margin-top: var(--small_size);
+						margin-bottom: var(--small_size);
 
-		        width: var(--general_size);
-		        height: var(--general_size);
-		        
-		        background-color: white;
-		        border-radius: var(--general_size);
-		        border: 1px solid var(--greyish_blue);
+						display: flex;
+						justify-content: flex-start;
+					}
 
-		        content: '';  
-		    }
+					/* One piece */
+						
+						.l-radio
+						{
+							display: flex;
+							flex-direction: row;
 
-		    .immo__input__radio:checked:after 
-		    {
-		        position: relative;
-		        top: -2px; left: -1px;
+							width: 50%;
 
-		        display: inline-block;
-		        visibility: visible;
+							align-items: center;
 
-		        width: var(--general_size);
-		        height: var(--general_size);
-		        
-		        background-color: var(--super_blue);
-		        border-radius: var(--general_size);
-		        border: 1px solid white;
+							margin-right: var(--general_size);
+							margin-left: var(--general_size);
+						}
 
-		        content: '';  
-		    }
 
-		/* Plat ou pente bordel */
+						/* Label */
 
-			.l-radio
-			{
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				padding-right: var(--general_size);
-			}
+							.label__radio
+							{
+								font-size: var(--general_size);
+								
+								margin-left: var(--small_size);
+								margin-right: var(--small_size);
+							}
 
-			.l-radio__container
-			{
-				width: 100%;
+						/* Design des radiox boxes */
 
-				margin-top: var(--small_size);
+							.immo__input__radio:after 
+							{
+								position: relative;
+						        top: -2px; left: -1px;
 
-				display: flex;
-				justify-content: flex-start;
-			}
+						        display: inline-block;
+						        visibility: visible;
 
-			.label__radio
-			{
-				font-size: var(--large_size);
-				margin-left: var(--small_size);
-				margin-right: var(--small_size);
-			}
+						        width: var(--general_size);
+						        height: var(--general_size);
+						        
+						        background-color: white;
+						        border-radius: var(--general_size);
+						        border: 1px solid var(--greyish_blue);
+
+						        content: '';  
+						    }
+
+						    .immo__input__radio:checked:after 
+						    {
+						        position: relative;
+						        top: -2px; left: -1px;
+
+						        display: inline-block;
+						        visibility: visible;
+
+						        width: var(--general_size);
+						        height: var(--general_size);
+						        
+						        background-color: var(--super_blue);
+						        border-radius: var(--general_size);
+						        border: 1px solid white;
+
+						        content: '';  
+						    }
+
 
 		/* Bouton de validation */
 			
 			.l-immo__button
 			{
 				background-color: white;
+
 				padding: 0.1em 0.3em;
+
+				margin-top: 1em;
 				
 				align-self: flex-end;
 			}
@@ -207,16 +238,16 @@
 				border: var(--greyish_blue) 2px solid;
 			}
 
+
 	/* Résultats */
 
 	.l-immo__results
 		{
-			width: 30vw;
+			width: 50%;
 
-			margin-right: auto;
-			margin-left: auto;
+			margin-top: var(--general_size);
 
-			margin-top: var(--great_size);
+			padding: 0em 2em;
 
 			border-left: solid 1px white;
 		}

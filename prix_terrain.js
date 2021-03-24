@@ -6,7 +6,7 @@
 		.then(response => response.json())
 		.then(data =>
 			{
-				var listeVille = '<option value="">Trouver une ville</option>';
+				var listeVille = '';
 
 				for (const commune of data)
 				{
@@ -20,6 +20,7 @@
 
 /* Récupération éléments du DOM */
 
+var form = document.getElementsByClassName("l-immo__form")[0];
 var codePostalBox = document.getElementById("codePostal");
 var ville = document.getElementById("ville");
 
