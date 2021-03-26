@@ -25,6 +25,7 @@
 	}
 
 /* CSS global & MA0 */
+
 	*
 	{
 		color: white;
@@ -37,6 +38,7 @@
 
 	.l-immo__body
 		{
+
 			max-height: 100vh;
 			max-width: 100vw;
 
@@ -92,7 +94,7 @@
 			display: flex;
 			flex-direction: column;
 
-			width: 40%;
+			width: 40vw;
 
 			padding-left: 10vw;
 			padding-right: 10vw;
@@ -243,7 +245,7 @@
 
 	.l-immo__results
 		{
-			width: 50%;
+			width: 60vw;
 
 			margin-top: var(--general_size);
 

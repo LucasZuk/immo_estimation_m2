@@ -1,5 +1,24 @@
 <?php  
-    
+
+// Connexion à BDD
+        $servname = 'localhost';
+        $dbname = 'immo';
+        $user = 'root';
+        $pass = 'root';
+
+        try
+        {
+            $bdd = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+
+        catch(PDOException $e)
+        {
+         // En cas d'erreur, on affiche un message et on arrête tout
+                    die('Erreur : '.$e->getMessage());
+        } 
+
+  
 /* Post dans la base "prix__immo" */
 
         // Initialise les variables
@@ -85,7 +104,8 @@
                 'phoneVendor' => $phoneVendor,
                 'pub' => $pub
             )) ;
-    
+            
+            echo "Le terrain a bien été entré en base.";
             $req -> closeCursor();
             header('Location: prix_terrain.php');
 
@@ -93,14 +113,6 @@
 
 ?>
 
-<p>'            codePostal' => <?php echo $codePostal ?><br/>
-                'ville' => <?php echo $ville ?><br/>
-                'surface' => <?php echo $surface ?><br/>
-                'prix' => <?php echo $prix ?><br/>
-                'flat' => <?php echo $flat ?><br/>
-                'viabilise' => <?php echo $viabilise ?><br/>
-                'nameVendor' => <?php echo $nameVendor ?><br/>
-                'pub' => <?php echo $pub ?><br/></p>
             
  
 
