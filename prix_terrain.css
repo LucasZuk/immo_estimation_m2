@@ -173,6 +173,13 @@
 						color: var(--super_blue);
 					}
 
+		/* Selection */
+
+			.ville__selection
+			{
+				width: 400px;
+			}
+
 		/* Radio */
 
 			/* All container */
@@ -327,6 +334,7 @@
 				{
 					font-size: var(--great_size);
 				}
+
 
 
 
