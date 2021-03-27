@@ -9,7 +9,7 @@
 			.then(response => response.json())
 			.then(data =>
 				{
-					var listeVille = '<option value="">- Sélectionner une ville -</option>';
+					var listeVille = '<option value="">Sélectionner une ville</option>';
 
 					for (const commune of data)
 					{

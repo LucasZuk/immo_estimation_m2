@@ -16,7 +16,9 @@
 	<!-- Google Fonts -->
 
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Boogaloo&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap" rel="stylesheet"> -->
 
 </head>
 
@@ -38,26 +40,28 @@
 
 					<!-- Code postal -->
 
-						<label class="l-label__flex label__flex">Entrez un code postal</label>
-						<input type="text" name="codePostal" class="l-immo__input immo__input" id="codePostal" required/>
+						<label class="l-label__flex label__flex"></label>
+						<input type="text" name="codePostal" class="l-immo__input immo__input" id="codePostal" required placeholder="Entrez un code postal" />
 
 
 					<!-- Liste des villes -->
 
-						<label class="l-label__flex label__flex">Choisir la ville</label>
-						<select name="ville" class="l-ville__selection ville__selection l-immo__input immo__input" id="ville" required></select>
+						<label class="l-label__flex label__flex"></label>
+						<select name="ville" class="l-ville__selection ville__selection l-immo__input immo__input" id="ville" required>
+							<option value="">Sélectionner une ville</option>
+						</select>
 
 
 					<!-- Surface -->
 
-						<label class="l-label__flex label__flex">Surface</label>
-						<input type="text" name="surface" class="l-immo__input immo__input" id="surface" required/>
+						<label class="l-label__flex label__flex"></label>
+						<input type="text" name="surface" class="l-immo__input immo__input" id="surface" required placeholder="Surface"/>
 
 
 					<!-- Prix -->
 
-						<label class="l-label__flex label__flex">Prix</label>
-						<input type="text" name="prix" class="l-immo__input immo__input" id="prix" required/>
+						<label class="l-label__flex label__flex"></label>
+						<input type="text" name="prix" class="l-immo__input immo__input" id="prix" required placeholder="Prix"/>
 
 
 					<!-- Plat ou Pente -->
@@ -88,15 +92,14 @@
 
 					<!-- Nom Vendeur -->
 
-						<label class="l-label__flex label__flex">Nom du vendeur</label>
-						<input type="text" name="nameVendor" class="l-immo__input immo__input" id="nameVendor"/>
+						<label class="l-label__flex label__flex"></label>
+						<input type="text" name="nameVendor" class="l-immo__input immo__input" id="nameVendor" placeholder="Nom du vendeur"/>
 
 
 					<!-- Téléphone Vendeur -->
 
 						<label class="l-label__flex label__flex">Téléphone du vendeur</label>
-						<input type="text" name="phoneVendor" class="l-immo__input immo__input" id="phoneVendor"/>
-
+						<input type="text" name="phoneVendor" class="l-immo__input immo__input" id="phoneVendor" placeholder="Téléphone du vendeur"/>
 
 					<!-- is Pub -->
 					
@@ -124,9 +127,10 @@
 				
 
 				<!-- Script permettant de remplir la BDD et de retourner un message de confirmation à l'utilisateur -->
-
-					<?php 
-						include('./postDataBase.php');
+					<?php
+						$reponse ="";
+						require("postDataBase.php");
+						echo $reponse;
 					?>
 
 

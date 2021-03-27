@@ -10,16 +10,20 @@
 		--text_shadow : .1em .1em .1em hsla(0, 0%, 0%, .3);
 
 		/* Fonts */
-		--fantasy_font : 'Boogaloo', cursive;
+		--fantasy_font : 'Archivo Black', 'Boogaloo', sans-serif, cursive;
+		/*--fantasy_font : 'Boogaloo', cursive;*/
 		--general_font : 'Source Sans Pro', sans-serif;
 
 		/* Size */
-		--big_size : 3em;
-		--large_size : 2em;
-		--great_size : 1.5em;
+		--big_size : 3.5em;
+		--large_size : 1.3em;
+		--great_size : 1.15em;
 		--general_size : 1em;
 		--small_size : .5em;
 		--mini_size : .1em;
+
+		--big_space : 10vw;
+		--general_space : 3vh;
 
 
 	}
@@ -45,7 +49,12 @@
 			height: 100vh;
 			width: 100vw;
 
+			box-sizing: border-box;
+
+			padding-top: 10vh;
+
 			overflow: hidden;
+
 		}
 
 	.immo__body
@@ -58,12 +67,14 @@
 	
 	.l-immo__principal_title
 	{
-		width: 100vw;
+		width: 40vw;
+		margin-right: auto;
+		margin-left: .5em;
+
 		text-overflow: wrap;
+		text-align: left;
 
-		margin-top: var(--general_size);
-
-		padding-left: var(--general_size);
+		margin-left: var(--big_space);
 	}
 
 	.immo__principal_title
@@ -80,11 +91,10 @@
 		display: flex;
 		justify-content: space-between;
 
-		margin-top: var(--great_size);
-		margin-left: 10vw;
-		margin-right: 10vw;
+		margin-left: var(--big_space);
 
-		width: 80vw;
+		max-width: 90vw;
+		height: 85%;
 	}
 
 	/* Formulaire */
@@ -96,11 +106,9 @@
 
 			width: 40vw;
 
-			padding-left: 10vw;
-			padding-right: 10vw;
-
 			padding-top: 2em;
 			padding-bottom: 2em;
+			padding-right: var(--big_space);
 			
 		}
 
@@ -127,6 +135,8 @@
 			.l-immo__input 
 			{
 				max-width: 300px;
+
+				padding-left: var(--general_size);
 			}
 
 			.immo__input
@@ -137,6 +147,31 @@
 				border-radius: 5px;
 				border: var(--greyish_blue) 2px solid;
 			}
+
+			/* Placeholder des imputs */
+
+				/* WebKit, Blink, Edge */
+					::-webkit-input-placeholder 
+					{ 
+						color: var(--super_blue);
+					}
+				/* Mozilla Firefox 4 à 18 */
+					:-moz-placeholder 
+					{
+						color: var(--super_blue);
+						opacity: 1;
+					}
+				/* Mozilla Firefox à partir de la version 19 */
+					::-moz-placeholder 
+					{
+						color: var(--super_blue);
+						opacity: 1;
+					}
+				/* Internet Explorer 10-11 */
+					:-ms-input-placeholder 
+					{
+						color: var(--super_blue);
+					}
 
 		/* Radio */
 
@@ -228,7 +263,7 @@
 
 				margin-top: 1em;
 				
-				align-self: flex-end;
+				align-self: flex-start;
 			}
 
 			.immo__button
@@ -241,15 +276,66 @@
 			}
 
 
-	/* Résultats */
+	/* Résultats container */
 
 	.l-immo__results
 		{
-			width: 60vw;
+			width: 90%;
+			height: 90%;
 
-			margin-top: var(--general_size);
+			margin-top: var(--general_space);
 
 			padding: 0em 2em;
 
 			border-left: solid 1px white;
 		}
+
+		/* Paragraphe */
+
+			.l-immo__reponse
+			{
+				margin-bottom: var(--general_size);
+			}
+
+			.immo__reponse
+			{
+				font-size: var(--great_size);
+			}
+
+			.immo__reponse strong
+			{
+				font-size: var(--large_size);
+			}
+
+		/* Liste à puce */
+
+			.l-immo__reponse__liste
+			{
+				height: 55vh;
+				overflow: scroll;
+			}
+
+			/* Items */
+
+				.l-immo__liste__items
+				{
+					margin-top: var(--small_size);
+					margin-left: var(--big_size);
+				}
+
+				.l-immo__liste__items strong
+				{
+					font-size: var(--great_size);
+				}
+
+
+
+
+
+
+
+
+
+
+
+

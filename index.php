@@ -1,4 +1,5 @@
 <?php 
+header('Location: prix_terrain.php');
 
 // Connexion à BDD
 	$servname = 'localhost';
